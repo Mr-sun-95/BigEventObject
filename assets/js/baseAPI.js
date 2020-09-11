@@ -21,7 +21,12 @@ $.ajaxPrefilter(function (options) {
             // 1. 强制清空假token
             localStorage.removeItem('token')
             // 2.跳转到登录页面
-            location.href = '/login.html'
+            if (window.parent) {
+                window.parent.location.href = '/login.html'
+            } else {
+                location.href = '/login.html'
+            }
+            // location.href = '/login.html'
         }
     }
 
