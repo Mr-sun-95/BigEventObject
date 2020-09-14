@@ -61,7 +61,7 @@
 
 
 
-    <!-- 课表数据的模板引擎 -->
+    <!-- 表格数据的模板引擎 -->
     <script type="text/html" id="tpl-table">
         {{each data}}
         <tr>
@@ -71,7 +71,7 @@
             <td>{{$value.state}}</td>
             <td>
                 <button type="button" class="layui-btn layui-btn-xs ">编辑</button>
-                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs ">删除</button>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-delete" data-id='{{$value.Id}}'>删除</button>
             </td>
         </tr>
         {{/each}}

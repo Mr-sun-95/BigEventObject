@@ -1,6 +1,9 @@
 $(function () {
     var layer = layui.layer
     var form = layui.form
+
+
+
     initArtCateList()
     // 获取文章列表
     function initArtCateList() {
@@ -74,7 +77,7 @@ $(function () {
     })
 
 
-
+    // 事件委托为表单修改弹出层绑定请求
     $('body').on('submit', '#form-edit', function (e) {
         e.preventDefault()
         $.ajax({
@@ -96,7 +99,7 @@ $(function () {
 
 
 
-    // 删除事件
+    // 删除事件  事件委托
     $('tbody').on('click', '.btn-delete', function () {
         var id = $(this).attr('data-id')
         layer.confirm('确认删除', { icon: 3, title: '提示' }, function (index) {
